@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Grotesk HK";
+    src: url(/assets/hk-grotesk.woff2), url(/assets/hk-grotesk.woff);
+}
+
+body {
+    font-family: "Grotesk HK";
+}
