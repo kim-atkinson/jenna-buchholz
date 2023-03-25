@@ -4,5 +4,18 @@
 }
 
 body {
-    font-family: "Grotesk HK";
+    font-family: "Grotesk HK", Arial;
+    font-size: 36px;
+    line-height: 1.25;
+
+    background-color: #ffffff;
+    color: #333333;
+}
+
+header {
+    /* Not attached to the page. Attached to the browser window. */
+    position: fixed;
+    top: 36px; 
+    left: 36px;
+    z-index: 1;
 }
