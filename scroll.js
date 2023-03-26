@@ -4,7 +4,7 @@ const progressTag = document.querySelector("div.progress")
 const sections = document.querySelectorAll("section")
 const clientTag = document.querySelector("div.client")
 const pageTag = document.querySelector("div.page")
-
+const headerTag = document.querySelector("header")
 
 
 // When user scrolls, update the pixels tag
@@ -38,6 +38,17 @@ document.addEventListener("scroll", function () {
         if (section.offsetTop - 100 <= pixels) {
             clientTag.innerHTML = section.getAttribute("data-client")
             pageTag.innerHTML =  section.getAttribute("data-page")
+
+            if (section.hasAttribute("data-is-dark")) {
+                headerTag.classList.add("white")
+                progressTag.classList.add("white")
+            } else {
+                headerTag.classList.remove("white")
+                progressTag.classList.remove("white")
+            }
+
         }
+
+        
     })
 })
