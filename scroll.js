@@ -69,7 +69,8 @@ document.addEventListener("scroll", function () {
         const distanceToSection = midViewport - midSection
         
         const tag = section.querySelector("div.square")
+        const speed = parseFloat(tag.getAttribute("data-parallax"))
 
-        tag.style.transform = `translate(0, ${distanceToSection * 0.25}px)`
+        tag.style.transform = `translate(0, ${distanceToSection * speed}px)`
     })
 })
