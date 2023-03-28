@@ -68,9 +68,12 @@ document.addEventListener("scroll", function () {
 
         const distanceToSection = midViewport - midSection
         
-        const tag = section.querySelector("div.square")
-        const speed = parseFloat(tag.getAttribute("data-parallax"))
+        const parallaxTags = section.querySelectorAll(`[data-parallax]`)
 
-        tag.style.transform = `translate(0, ${distanceToSection * speed}px)`
+        // Loop over each parallaxed tag
+        parallaxTags.forEach(tag => {
+            const speed = parseFloat(tag.getAttribute("data-parallax"))
+            tag.style.transform = `translate(0, ${distanceToSection * speed}px)`
+        })
     })
 })
