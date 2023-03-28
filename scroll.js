@@ -52,3 +52,24 @@ document.addEventListener("scroll", function () {
         
     })
 })
+
+
+// When user scrolls page, make parralax
+// Move certain tags based on how far they are from the achor point
+// Anchor point is the iddle of the section
+// Ratio of the middle distance scrolled to the middle point of the anchor
+document.addEventListener("scroll", function () {
+    const topViewport = window.pageYOffset
+    const midViewport = topViewport + (window.innerHeight / 2)
+
+    sections.forEach(section => {
+        const topSection = section.offsetTop
+        const midSection = topSection + (section.offsetHeight / 2)
+
+        const distanceToSection = midViewport - midSection
+        
+        const tag = section.querySelector("div.square")
+
+        tag.style.transform = `translate(0, ${distanceToSection * 0.25}px)`
+    })
+})
